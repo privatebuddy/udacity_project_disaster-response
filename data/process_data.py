@@ -53,6 +53,7 @@ def clean_data(df):
         # convert column from string to numeric
         categories[column] = pd.to_numeric(categories[column])
 
+    categories = categories[categories.related != 2]
     # drop old categories
     df.drop(['categories'], axis=1, inplace=True)
 
